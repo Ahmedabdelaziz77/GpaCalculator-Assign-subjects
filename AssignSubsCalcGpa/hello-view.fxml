@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="419.0" type="StackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gpa_calculator.HelloController">
+   <children>
+      <AnchorPane fx:id="main_pane" prefHeight="799.0" prefWidth="419.0">
+         <children>
+            <AnchorPane fx:id="signin_pane" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css" visible="false">
+               <children>
+                  <ImageView fitHeight="77.0" fitWidth="118.0" layoutX="171.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/log-in.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="154.0" prefHeight="21.0" prefWidth="199.0" styleClass="lbl" text="Sign In Account" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="email_signin" layoutX="55.0" layoutY="253.0" prefHeight="41.0" prefWidth="310.0" promptText="Email Address" stylesheets="@style.css" />
+                  <PasswordField fx:id="pass_signin" layoutX="55.0" layoutY="324.0" prefHeight="41.0" prefWidth="310.0" promptText="Password" stylesheets="@style.css" />
+                  <TextField fx:id="passtxt_signin" layoutX="55.0" layoutY="324.0" prefHeight="41.0" prefWidth="326.0" stylesheets="@style.css" visible="false" />
+                  <CheckBox fx:id="showpass_signin" layoutX="55.0" layoutY="395.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="30.0" prefWidth="175.0" text="Show Password">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="674.0" prefHeight="21.0" prefWidth="193.0" styleClass="lbl" stylesheets="@style.css" text="Register Account">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="forgetpass_signin" layoutX="244.0" layoutY="396.0" onAction="#switch_Between" text="Forget Password ?" />
+                  <Button fx:id="login_btn" layoutX="53.0" layoutY="479.0" mnemonicParsing="false" onAction="#login" prefHeight="55.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="LOGIN" />
+                  <Button fx:id="createacc_btn" layoutX="56.0" layoutY="732.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Create Account" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="signup_pane" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="77.0" fitWidth="118.0" layoutX="166.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/add-friend.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="104.0" layoutY="100.0" prefHeight="21.0" prefWidth="199.0" styleClass="lbl" text="Sign Up Account" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="email_signup" layoutX="55.0" layoutY="157.0" prefHeight="41.0" prefWidth="310.0" promptText="Email Address" stylesheets="@style.css" />
+                  <PasswordField fx:id="pass_signup" layoutX="55.0" layoutY="218.0" prefHeight="41.0" prefWidth="310.0" promptText="Password" stylesheets="@style.css" />
+                  <TextField layoutX="55.0" layoutY="216.0" prefHeight="44.0" prefWidth="326.0" stylesheets="@style.css" visible="false" />
+                  <TextField fx:id="username_signup" layoutX="55.0" layoutY="283.0" prefHeight="41.0" prefWidth="310.0" promptText="Username" stylesheets="@style.css" />
+                  <TextField fx:id="level_signup" layoutX="55.0" layoutY="351.0" prefHeight="41.0" prefWidth="310.0" promptText="Level" stylesheets="@style.css" />
+                  <TextField fx:id="semster_signup" layoutX="55.0" layoutY="408.0" prefHeight="41.0" prefWidth="310.0" promptText="Semster" stylesheets="@style.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="692.0" prefHeight="21.0" prefWidth="193.0" styleClass="lbl" text="Sign In Account">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="loginacc_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="722.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="botn" stylesheets="@style.css" text="Login Account" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="selectquestion_signup" layoutX="55.0" layoutY="473.0" prefHeight="41.0" prefWidth="310.0" promptText="Select Question" />
+                  <TextField fx:id="answer_signup" layoutX="55.0" layoutY="537.0" prefHeight="41.0" prefWidth="310.0" promptText="Answer" stylesheets="@style.css" />
+                  <Button fx:id="signup_btn" layoutX="55.0" layoutY="596.0" mnemonicParsing="false" onAction="#register" prefHeight="55.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Sign Up" />
+                  <Button fx:id="gotologin_btn" layoutX="58.0" layoutY="736.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Go To Login" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="forgetpass_pane1" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css" visible="false">
+               <children>
+                  <ImageView fitHeight="77.0" fitWidth="118.0" layoutX="171.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/forgot.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="153.0" prefHeight="21.0" prefWidth="199.0" styleClass="lbl" text="Forget Password" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="71.0" layoutY="324.0" prefHeight="41.0" prefWidth="310.0" stylesheets="@style.css" visible="false" />
+                  <TextField fx:id="answer_forgetpass" layoutX="60.0" layoutY="418.0" prefHeight="41.0" prefWidth="310.0" promptText="Answer" stylesheets="@style.css" />
+                  <ComboBox fx:id="selectquestion_forgetpass" layoutX="60.0" layoutY="338.0" prefHeight="41.0" prefWidth="300.0" promptText="Select Question" />
+                  <TextField fx:id="email_forgetpass" layoutX="60.0" layoutY="255.0" prefHeight="41.0" prefWidth="310.0" promptText="Email Address" stylesheets="@style.css" />
+                  <Button fx:id="done_btn" layoutX="60.0" layoutY="558.0" mnemonicParsing="false" onAction="#forgetPassword" prefHeight="55.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Done" />
+                  <Button fx:id="back_btn_fr1" layoutX="60.0" layoutY="702.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="44.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Back" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="forgetpass_pane2" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css" visible="false">
+               <children>
+                  <ImageView fitHeight="77.0" fitWidth="118.0" layoutX="171.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/forgot.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="154.0" prefHeight="21.0" prefWidth="199.0" styleClass="lbl" text="Forget Password" textAlignment="JUSTIFY" textFill="#064872">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="71.0" layoutY="324.0" prefHeight="41.0" prefWidth="310.0" stylesheets="@style.css" visible="false" />
+                  <PasswordField fx:id="confpass_forgetpass2" layoutX="55.0" layoutY="372.0" prefHeight="41.0" prefWidth="310.0" promptText="Confirm Password" stylesheets="@style.css" />
+                  <PasswordField fx:id="pass_forgetpass2" layoutX="55.0" layoutY="304.0" prefHeight="41.0" prefWidth="310.0" promptText="Password" stylesheets="@style.css" />
+                  <Button fx:id="done_btn2" layoutX="55.0" layoutY="484.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="55.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Change Password" />
+                  <Button fx:id="back_btn_fr2" layoutX="55.0" layoutY="698.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="Back" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="gpa_pane" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css" visible="false">
+               <children>
+                  <ImageView fitHeight="103.0" fitWidth="77.0" layoutX="171.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/grade.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="155.0" prefHeight="30.0" prefWidth="364.0" text="Put Your Grades Between 0 - 100" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="71.0" layoutY="324.0" prefHeight="41.0" prefWidth="310.0" stylesheets="@style.css" visible="false" />
+                  <Button fx:id="loginacc_btn1" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="722.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="botn" stylesheets="@style.css" text="Login Account" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="sub1_take" layoutX="55.0" layoutY="207.0" prefHeight="41.0" prefWidth="310.0" promptText="sub1" stylesheets="@style.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="419.0" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="769.0" prefHeight="30.0" prefWidth="419.0" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sub2_take" layoutX="55.0" layoutY="283.0" prefHeight="41.0" prefWidth="310.0" promptText="sub2" stylesheets="@style.css" />
+                  <TextField fx:id="sub3_take" layoutX="55.0" layoutY="352.0" prefHeight="41.0" prefWidth="310.0" promptText="sub3" stylesheets="@style.css" />
+                  <TextField fx:id="sub4_take" layoutX="55.0" layoutY="437.0" prefHeight="41.0" prefWidth="310.0" promptText="sub4" stylesheets="@style.css" />
+                  <TextField fx:id="sub5_take" layoutX="55.0" layoutY="509.0" prefHeight="41.0" prefWidth="310.0" promptText="sub5" stylesheets="@style.css" />
+                  <Button fx:id="exit_gpa_btn" layoutX="55.0" layoutY="689.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="55.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="EXIT" />
+                  <Button fx:id="next_gpa_btn" layoutX="55.0" layoutY="598.0" mnemonicParsing="false" onAction="#put_gpa" prefHeight="55.0" prefWidth="310.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="NEXT" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="subs_pane" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css" visible="false">
+               <children>
+                  <ImageView fitHeight="103.0" fitWidth="77.0" layoutX="163.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/books.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="425.0" text="GPA" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </Label>
+                  <TextField layoutX="71.0" layoutY="324.0" prefHeight="41.0" prefWidth="310.0" stylesheets="@style.css" visible="false" />
+                  <Button fx:id="loginacc_btn11" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="722.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="botn" stylesheets="@style.css" text="Login Account" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="gpa_1" alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="79.0" prefHeight="30.0" prefWidth="108.0" text="A" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="gpa_2" alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="79.0" prefHeight="30.0" prefWidth="108.0" text="3.7" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="769.0" prefHeight="30.0" prefWidth="425.0" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="150.0" prefHeight="30.0" prefWidth="228.0" styleClass="lbl" text="Your Next Subjects" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sub_1" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="16.0" layoutY="230.0" prefHeight="30.0" prefWidth="263.0" styleClass="lbl" text="Sub1" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sub_2" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="16.0" layoutY="324.0" prefHeight="30.0" prefWidth="263.0" styleClass="lbl" text="Sub2" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sub_5" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="16.0" layoutY="608.0" prefHeight="30.0" prefWidth="263.0" styleClass="lbl" text="Sub5" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sub_4" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="16.0" layoutY="512.0" prefHeight="30.0" prefWidth="263.0" styleClass="lbl" text="Sub4" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sub_3" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="16.0" layoutY="418.0" prefHeight="30.0" prefWidth="263.0" styleClass="lbl" text="Sub3" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_1" contentDisplay="CENTER" layoutX="69.0" layoutY="268.0" prefHeight="44.0" prefWidth="350.0" styleClass="lbll" stylesheets="@style.css" text="You passed The Prerequest of this subject you can assign it">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_2" contentDisplay="CENTER" layoutX="69.0" layoutY="366.0" prefHeight="44.0" prefWidth="350.0" styleClass="lbll" stylesheets="@style.css" text="You passed The Prerequest of this subject you can assign it">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_3" contentDisplay="CENTER" layoutX="69.0" layoutY="448.0" prefHeight="44.0" prefWidth="350.0" styleClass="lbll" stylesheets="@style.css" text="You passed The Prerequest of this subject you can assign it">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_4" contentDisplay="CENTER" layoutX="70.0" layoutY="550.0" prefHeight="44.0" prefWidth="350.0" styleClass="lbll" stylesheets="@style.css" text="You passed The Prerequest of this subject you can assign it">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_5" contentDisplay="CENTER" layoutX="70.0" layoutY="644.0" prefHeight="44.0" prefWidth="350.0" styleClass="lbll" stylesheets="@style.css" text="You passed The Prerequest of this subject you can assign it">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="END_GPA" layoutX="86.0" layoutY="700.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="44.0" prefWidth="250.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="END" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Grade4_pane" prefHeight="799.0" prefWidth="419.0" styleClass="white-bg" stylesheets="@style.css" visible="false">
+               <children>
+                  <ImageView fitHeight="103.0" fitWidth="77.0" layoutX="163.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Users/LENOVO/Desktop/java%20project/books.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="425.0" text="GPA" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </Label>
+                  <TextField layoutX="71.0" layoutY="324.0" prefHeight="41.0" prefWidth="310.0" stylesheets="@style.css" visible="false" />
+                  <Button fx:id="loginacc_btn111" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="722.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="41.0" prefWidth="310.0" styleClass="botn" stylesheets="@style.css" text="Login Account" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="grade4_gpa1" alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="79.0" prefHeight="30.0" prefWidth="108.0" text="A" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="grade4_gpa2" alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="79.0" prefHeight="30.0" prefWidth="108.0" text="3.7" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="769.0" prefHeight="30.0" prefWidth="425.0" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="150.0" prefHeight="30.0" prefWidth="228.0" styleClass="lbl" text="Your Next Subjects" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl1_4grade" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="256.0" prefHeight="240.0" prefWidth="419.0" styleClass="lbl" stylesheets="@style.css" text="Congratulations You Have Graduated" textFill="#c91111">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl2_4grade" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="487.0" prefHeight="138.0" prefWidth="419.0" styleClass="lbl" stylesheets="@style.css" text="You passed The Prerequest of this subject you can assign it">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="END_grade4" layoutX="86.0" layoutY="700.0" mnemonicParsing="false" onAction="#switch_Between" prefHeight="44.0" prefWidth="250.0" styleClass="btn" stylesheets="@../../../../../../../GPA_CALCU/src/main/resources/com/example/gpa_calculator/style.css" text="END" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>
