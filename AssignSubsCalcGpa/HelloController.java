@@ -549,19 +549,20 @@ public class HelloController implements Initializable {
     }
 
 
-    //3- calculate gpa by call an API
+    //3- calculate gpa by call an API commented for security
     public void calcGpa1() throws IOException, InterruptedException {
-        int sum = Integer.parseInt(sub1_take.getText()) + Integer.parseInt(sub2_take.getText()) + Integer.parseInt(sub3_take.getText())
-                + Integer.parseInt(sub4_take.getText()) + Integer.parseInt(sub5_take.getText());
-        sum /= 5;
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://grade-calculator.p.rapidapi.com/grade/85/75/65/50/" + String.valueOf(sum)))
-                .header("X-RapidAPI-Key", "8612ad9bb9mshd19309f7b55ce61p19fc5ejsn8130200415fd")
-                .header("X-RapidAPI-Host", "grade-calculator.p.rapidapi.com")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        cur_gpa1 = response.body();
+        // int sum = Integer.parseInt(sub1_take.getText()) + Integer.parseInt(sub2_take.getText()) + Integer.parseInt(sub3_take.getText())
+        //         + Integer.parseInt(sub4_take.getText()) + Integer.parseInt(sub5_take.getText());
+        // sum /= 5;
+        // HttpRequest request = HttpRequest.newBuilder()
+        //         .uri(URI.create("https://grade-calculator.p.rapidapi.com/grade/85/75/65/50/" + String.valueOf(sum)))
+        //         .header("X-RapidAPI-Key", "8612ad9bb9mshd19309f7b55ce61p19fc5ejsn8130200415fd")
+        //         .header("X-RapidAPI-Host", "grade-calculator.p.rapidapi.com")
+        //         .method("GET", HttpRequest.BodyPublishers.noBody())
+        //         .build();
+        // HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        // cur_gpa1 = response.body();
+    
     }
 
     //4- Calculate numerical GPA by threads
